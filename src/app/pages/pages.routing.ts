@@ -10,6 +10,7 @@ import { ControlAsistenciasComponent } from './control-asistencias/control-asist
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
     { 
@@ -22,6 +23,7 @@ const routes: Routes = [
           { path: 'grafica1', component: Grafica1Component, data: { titulo:'Grafica' } },
           { path: 'account-settings', component: AccountSettingsComponent, data: { titulo:'Configuración de cuenta' } },
           { path: 'control-asistencias', component: ControlAsistenciasComponent, data: { titulo:'Control de asistencia' } },
+          { path: 'perfil', component: PerfilComponent, data: { titulo:'Perfil de usuario' } },
           { path: 'promesas', component: PromesasComponent },
           { path: 'rxjs', component: RxjsComponent },
         ]

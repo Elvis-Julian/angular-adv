@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Administrativo } from 'src/app/models/administrativo.model';
 import { AdministrativoService } from 'src/app/services/administrativo.service';
+import { ModalFormService } from 'src/app/services/modal-form.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,7 +15,8 @@ export class AdministrativosComponent implements OnInit {
   public administrativos: Administrativo[] = [];
   public cargando: boolean = true;;
 
-  constructor(private administrativoService: AdministrativoService) { }
+  constructor(private administrativoService: AdministrativoService,
+               private modalFormService: ModalFormService) { }
 
   ngOnInit(): void {
     this.cargarAdministrativos();
@@ -71,16 +73,21 @@ export class AdministrativosComponent implements OnInit {
     });
   }
 
-  async abrirAlert(){
-    const valor = await Swal.fire({
-      title: 'Crear administrativo',
-      input: 'text',
-      inputLabel: 'Datos del administrativo',
-      inputPlaceholder: 'Nombre del administrativo',
-      showCancelButton: true,
-    })
+  //---------------------------------------------
+  // async abrirAlert(){
+  //   const valor = await Swal.fire({
+  //     title: 'Crear administrativo',
+  //     input: 'text',
+  //     inputLabel: 'Datos del administrativo',
+  //     inputPlaceholder: 'Nombre del administrativo',
+  //     showCancelButton: true,
+  //   })
     
-    console.log(valor)
+  //   console.log(valor)
+  // }
+
+  abrirModalFormulario(){
+    this.modalFormService.abrirModalFormulario();
   }
 
 }

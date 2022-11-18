@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
 
 import { IncrementadorComponent } from './incrementador/incrementador.component';
-import { DonaComponent } from './dona/dona.component'
+import { DonaComponent } from './dona/dona.component';
 
 
 

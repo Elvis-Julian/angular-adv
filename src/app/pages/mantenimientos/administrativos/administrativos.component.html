@@ -1,0 +1,111 @@
+<div class="row animated fadeIn fast">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                     <input type="text"
+                     class="form-control"
+                     placeholder="Buscar administrativo..."/>                       
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row animated fadeIn fast"
+*ngIf="cargando">
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                
+                <div class="alert alert-info text-center">
+                  <h4 class="alert-heading">Cargando...</h4>
+                  <i class="fa fa-spin fa-refresh fa-2x"></i>
+                  <p class="mb-0">Por favor espere</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row"
+            *ngIf="!cargando">
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button class="btn btn-primary"
+                    (click)="abrirAlert()">
+                        <i class="fa fa-user-circle-o"></i>
+                        Crear administrativo
+                    </button>
+                </div>
+                <h4 class="card-title">Administrativos [{{administrativos.length}}]</h4>
+                <h6 class="card-subtitle">Administrativos registrados</h6>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="w100">Avatar</th>
+                                <th>ID. Admint</th>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Hora de entrada</th>
+                                <th>Hora de salida</th>
+                                <th class="text-nowrap w100">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let administrativo of administrativos">
+                                <td class="text-center">
+                                    <img [src]="administrativo.img  | imagen:'administrativos'" 
+                                    [alt]="administrativo.nombre"
+                                    class="avatar cursor">
+                                </td>
+                                <td>{{ administrativo.idUsuario }}</td>
+                                <td>
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    placeholder="Nombre del administrativo"
+                                     [(ngModel)]="administrativo.nombre" />
+                                </td>
+                                <td>{{ administrativo.fecha }}</td>
+                                <td>{{ administrativo.hora_ent }}</td>
+                                <td>{{ administrativo.hora_sld }}</td>
+                                
+                                <td class="text-nowrap text-center">
+                                <a (click)="guardarCambios(administrativo)" 
+                                    data-toggle="tooltip"
+                                    class="cursor" 
+                                    data-original-title="Guardar cambios"> 
+                                    <i class="fa fa-pencil text-inverse m-r-10"></i> 
+                                </a>
+                                    <a 
+                                    (click)="eliminarAdmint(administrativo)"
+                                    data-toggle="tooltip" 
+                                    class="cursor"
+                                    data-original-title="Borrar"> 
+                                    <i class="fa fa-close text-danger">
+
+                                    </i> 
+                                </a>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- <button class="btn btn-secondary">Anteriores</button>
+                &nbsp;
+                <button class="btn btn-secondary">Siguientes</button> -->
+
+            </div>
+        </div>
+    </div>
+
+</div>

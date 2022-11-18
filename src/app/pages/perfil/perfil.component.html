@@ -3,14 +3,14 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Mi perfil de usuario</h4>
-                <h6 class="card-subtitle">Ajustes de perdil</h6>
+                <h6 class="card-subtitle">Ajustes de perfil</h6>
 
                 <form class="form p-t-20" 
                 [formGroup]="formularioPerfil"
                 (ngSubmit)="actualizarPerfil()">
 
                     <div class="form-group">
-                        <label for="exampleInputuname">User Name</label>
+                        <label for="exampleInputuname">Nombre de usuario</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="ti-user"></i></div>
                             <input type="text" 
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">Correo electrónico</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="ti-email"></i></div>
                             <input type="email" 
@@ -56,6 +56,7 @@
                 <br>
                 <input type="file"
                 (change)="cambiarImagen($any($event.target).files[0])">
+                
                 <br>
                 <br>
 

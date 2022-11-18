@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ComponentsModule } from '../components/components.module';
 import { SharedModule } from '../shared/shared.module';
 
+import { PipesModule } from '../pipes/pipes.module';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
@@ -17,6 +19,10 @@ import { ControlAsistenciasComponent } from './control-asistencias/control-asist
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { AdministrativosComponent } from './mantenimientos/administrativos/administrativos.component';
+import { DocentesComponent } from './mantenimientos/docentes/docentes.component';
+
 
 
 
@@ -31,7 +37,10 @@ import { PerfilComponent } from './perfil/perfil.component';
    ControlAsistenciasComponent,
    PromesasComponent,
    RxjsComponent,
-   PerfilComponent
+   PerfilComponent,
+   UsuariosComponent,
+   AdministrativosComponent,
+   DocentesComponent
   ],
   exports: [ 
     DashboardComponent,
@@ -46,7 +55,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     SharedModule,
     RouterModule,
     ComponentsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ]
 })
 export class PagesModule { }

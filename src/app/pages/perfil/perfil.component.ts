@@ -48,9 +48,10 @@ export class PerfilComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Datos actualizados',
+          title: 'Guardado',
+          text: 'Datos actualizados',
           showConfirmButton: false,
-          timer: 1200
+          timer: 1500
         })
       }, (err) => {
         Swal.fire({
@@ -87,9 +88,10 @@ export class PerfilComponent implements OnInit {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Icono actualizado',
+        title: 'Guardado',
+        text: 'Foto de perfil actualizado',
         showConfirmButton: false,
-        timer: 1200
+        timer: 1500
       })
     }).catch( err => {
       Swal.fire({
